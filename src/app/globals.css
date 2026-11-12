@@ -1,0 +1,163 @@
+@import "tailwindcss";
+@import "@fontsource/vazirmatn/400.css";
+@import "@fontsource/vazirmatn/500.css";
+@import "@fontsource/vazirmatn/600.css";
+@import "@fontsource/vazirmatn/700.css";
+@import "@fontsource/vazirmatn/800.css";
+
+:root {
+  --ink: #0d2438;
+  --ink-soft: #29445a;
+  --muted: #5d7287;
+  --muted-light: #8a9aa8;
+  --line: #dbe6ee;
+  --line-soft: #edf2f5;
+  --paper: #f7fafc;
+  --navy: #0d2438;
+  --navy-deep: #081b2a;
+  --teal: #22b8a7;
+  --teal-strong: #159c8e;
+  --teal-soft: #e7f8f5;
+  --teal-line: #a9ded7;
+  --sand: #f3eee6;
+
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+
+  --shadow-card: 0 18px 50px rgba(13, 36, 56, 0.09);
+  --shadow-float: 0 24px 70px rgba(13, 36, 56, 0.13);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Vazirmatn", Tahoma, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote {
+  margin-block-start: 0;
+}
+
+:where([dir="rtl"]) {
+  text-align: right;
+}
+
+::selection {
+  background: #b9eee7;
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(34, 184, 167, 0.4);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted-light);
+  opacity: 1;
+}
+
+.ltr-data {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.nava-prose {
+  text-wrap: pretty;
+}
+
+.nava-grid {
+  background-image:
+    linear-gradient(rgba(16, 42, 67, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 42, 67, 0.045) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.nava-shell {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.nava-kicker {
+  color: var(--teal-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.nava-shadow {
+  box-shadow: var(--shadow-card);
+}
+
+.nava-glass {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+
+  .nava-shell {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .nava-kicker {
+    letter-spacing: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
